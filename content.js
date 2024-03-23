@@ -15,7 +15,7 @@ for (let row of rows) {
   const recapDocuments = row.querySelectorAll(".recap-documents");
 
   // Don't need to add a button if there's <=1 PDF for the row
-  if (recapDocuments.length > 1) {
+  if (recapDocuments.querySelectorAll("a.btn-primary").length > 1) {
     // Add row with button to download all
     const newRow = document.createElement("div");
     newRow.classList.add("row", "recap-documents");
@@ -31,6 +31,7 @@ for (let row of rows) {
     );
     const button = document.createElement("button");
     button.classList.add("btn", "btn-primary", "btn-xs");
+    button.style.marginBottom = "8.5px";
     button.innerText = "Download all PDFs";
 
     // On click, download all PDFs
