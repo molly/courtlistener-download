@@ -1,0 +1,23 @@
+{
+  "name": "courtlistener-download",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Download all PDFs from a CourtListener docket entry",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/molly/courtlistener-download.git"
+  },
+  "keywords": [
+    "CourtListener"
+  ],
+  "author": "Molly White",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/molly/courtlistener-download/issues"
+  },
+  "homepage": "https://github.com/molly/courtlistener-download#readme"
+}
