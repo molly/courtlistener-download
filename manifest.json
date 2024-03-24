@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "CourtListener PDF Downloader",
+  "name": "CourtListener Multiple PDF Downloader",
   "version": "1.0",
   "permissions": [
     "downloads",
