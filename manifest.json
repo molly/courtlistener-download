@@ -26,7 +26,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.courtlistener.com/docket/*"
+        "https://www.courtlistener.com/docket/*",
+        "https://*.uscourts.gov/*"
       ],
       "js": [
         "content.js"

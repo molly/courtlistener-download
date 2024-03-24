@@ -6,6 +6,10 @@ On CourtListener docket pages, where there are multiple PDF documents attached t
 
 ![Screenshot of CourtListener docket entry with multiple attachments, with an arrow pointing to a "Download all PDFs" button](./courtlistener-download.png)
 
+If you have the [RECAP extension](https://free.law/recap) installed (and you should!!), this extension will also work on PACER:
+
+![Screenshot of PACER docket entry with multiple attachments, with an arrow pointing to a "Download all PDFs from CourtListener" button](./pacer-download.png)
+
 ## Install
 
 1. Download this repo as a .zip file from GitHub.
