@@ -3,8 +3,7 @@
   "name": "CourtListener Multiple PDF Downloader",
   "version": "1.0",
   "permissions": [
-    "downloads",
-    "scripting"
+    "downloads"
   ],
   "host_permissions": [
     "https://storage.courtlistener.com/*"
