@@ -9,6 +9,15 @@ const getCourtListenerCaseName = () => {
   return "Unknown case";
 };
 
+const getPacerCaseName = () => {
+  const caseNameEl = document.querySelector("table tr:first-child td:nth-child(3)");
+  if (caseNameEl && caseNameEl.textContent) {
+    return caseNameEl.textContent.trim();
+  } else {
+    return "Download";
+  }
+};
+
 const downloadAll = (folder, downloads) => {
   let _chunkIndex = 0;
   let _blobs = [];
@@ -107,7 +116,8 @@ const courtListener = () => {
 
 const pacer = () => {
   const recapLinks = document.querySelectorAll(".recap-inline");
-  const caseName = document.querySelector("table tr:first-child td:nth-child(3)").textContent.trim();
+  const caseName = getPacerCaseName();
+
   if (recapLinks.length > 1) {
     const button = document.createElement("button");
     button.innerText = "Download all PDFs from CourtListener";
