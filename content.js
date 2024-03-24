@@ -30,7 +30,7 @@ for (let row of rows) {
       "hidden-print"
     );
     const button = document.createElement("button");
-    button.classList.add("btn", "btn-primary", "btn-xs");
+    button.classList.add("btn", "btn-success", "btn-xs");
     button.style.marginBottom = "8.5px";
     button.innerText = "Download all PDFs";
 
