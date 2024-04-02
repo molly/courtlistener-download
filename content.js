@@ -65,50 +65,74 @@ const courtListener = () => {
       // Add row with button to download all
       const newRow = document.createElement("div");
       newRow.classList.add("row", "recap-documents");
-      const buttonHolder = document.createElement("div");
-      buttonHolder.classList.add(
-        "col-xs-3",
-        "col-xs-offset-9",
+
+      // Make button wrappers
+      const bigButtonHolder = document.createElement("div");
+      const smallButtonHolder = document.createElement("div");
+      bigButtonHolder.classList.add(
+        "hidden-xs",
         "col-sm-4",
         "col-sm-offset-8",
         "col-md-3",
         "col-md-offset-9",
         "hidden-print"
       );
-      const button = document.createElement("button");
-      button.classList.add("btn", "btn-success", "btn-xs");
-      button.style.marginBottom = "8.5px";
-      button.innerText = "Download all PDFs";
+      smallButtonHolder.classList.add(
+        "col-xs-3",
+        "col-xs-offset-9",
+        "hidden-sm",
+        "hidden-md",
+        "hiden-lg",
+        "hidden-print"
+      );
+
+      // Make buttons
+      const bigButton = document.createElement("button");
+      bigButton.classList.add("btn", "btn-success", "btn-xs");
+      bigButton.style.marginBottom = "8.5px";
+      bigButton.title = "Download all PDFs";
+      bigButton.innerText = "Download all PDFs";
+
+      const smallButton = document.createElement("button");
+      smallButton.classList.add("btn", "btn-success", "btn-xs");
+      smallButton.style.marginBottom = "8.5px";
+      smallButton.title = "Download all PDFs";
+      const icon = document.createElement("i");
+      icon.classList.add("fa", "fa-file-zip-o");
+      smallButton.append(icon);
 
       // On click, download all PDFs
-      button.addEventListener("click", () => {
-        const downloads = [];
-        for (let documentRow of recapDocuments) {
-          const cols = documentRow.querySelectorAll(":scope > div");
+      for (let button of [bigButton, smallButton]) {
+        button.addEventListener("click", () => {
+          const downloads = [];
+          for (let documentRow of recapDocuments) {
+            const cols = documentRow.querySelectorAll(":scope > div");
 
-          // Get link element and extract name
-          const linkEl = cols[0].querySelector("a");
-          // If there's a link, we can do the download.
-          // Otherwise, the document isn't on CourtListener
-          if (linkEl) {
-            const linkText = linkEl.textContent.trim();
-            const description = cols[1].textContent.trim();
-            // Get direct download link (link href is an embedded PDF)
-            const directLink = cols[3].querySelector("a.btn-primary").href;
-            downloads.push({
-              url: directLink,
-              filename: `${linkText} - ${description}.pdf`,
-            });
+            // Get link element and extract name
+            const linkEl = cols[0].querySelector("a");
+            // If there's a link, we can do the download.
+            // Otherwise, the document isn't on CourtListener
+            if (linkEl) {
+              const linkText = linkEl.textContent.trim();
+              const description = cols[1].textContent.trim();
+              // Get direct download link (link href is an embedded PDF)
+              const directLink = cols[3].querySelector("a.btn-primary").href;
+              downloads.push({
+                url: directLink,
+                filename: `${linkText} - ${description}.pdf`,
+              });
+            }
           }
-        }
-        if (downloads.length) {
-          const folder = `${caseName} ${docketEntry}`;
-          downloadAll(folder, downloads);
-        }
-      });
+          if (downloads.length) {
+            const folder = `${caseName} ${docketEntry}`;
+            downloadAll(folder, downloads);
+          }
+        });
+      }
 
-      buttonHolder.append(button);
-      newRow.append(buttonHolder);
+      bigButtonHolder.append(bigButton);
+      smallButtonHolder.append(smallButton);
+      newRow.append(bigButtonHolder, smallButtonHolder);
       recapDocuments[recapDocuments.length - 1].after(newRow);
     }
   }
