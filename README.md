@@ -1,8 +1,10 @@
 # courtlistener-download
 
-Chrome extension to download all files related to one docket entry on CourtListener.
+Browser extension to download all files related to one docket entry on CourtListener.
 
-[![Available on the Chrome Web Store](./chrome-badge.png)](https://chromewebstore.google.com/detail/courtlistener-multiple-pd/mfhmcnemllapebbjmgjidncbimcnhkie)
+[Download for Chrome](https://chromewebstore.google.com/detail/courtlistener-multiple-pd/mfhmcnemllapebbjmgjidncbimcnhkie) • [Download for Firefox](https://addons.mozilla.org/en-US/firefox/addon/courtlistener-multi-downloader/)
+
+---
 
 On CourtListener docket pages, where there are multiple PDF documents attached to one entry and available on CourtListener, the extension adds a button to download all PDFs attached to that entry. They will be downloaded as a .zip file, and renamed to match the human-readable filenames instead of CourtListener's style.
 
@@ -12,7 +14,7 @@ If you have the [RECAP extension](https://free.law/recap) installed (and you sho
 
 ![Screenshot of PACER docket entry with multiple attachments, with an arrow pointing to a "Download all PDFs from CourtListener" button](./pacer-download.png)
 
-## Install
+## Install from source
 
 1. Download this repo as a .zip file from GitHub.
 2. Unzip the file.
